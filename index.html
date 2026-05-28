@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Huella Invisible</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌿 La Huella Invisible</h1>
+    <p>Periodismo de datos: descubre el impacto ambiental real de tu día a día.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Calculadora de impacto diario</h2>
+
+      <div class="two-col">
+        <div class="form-group">
+          <label for="tipo-transporte">Transporte</label>
+          <select id="tipo-transporte">
+            <option value="auto">Auto (bencina)</option>
+            <option value="micro">Micro / bus</option>
+            <option value="metro">Metro / tren</option>
+            <option value="bici">Bici / caminando</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="km">Kilómetros recorridos</label>
+          <input type="number" id="km" min="0" value="15" placeholder="Ej: 15">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alimentacion">Alimentación predominante hoy</label>
+        <select id="alimentacion">
+          <option value="alta-carne">Mucha carne de vacuno</option>
+          <option value="moderada" selected>Pollo, cerdo o pescado</option>
+          <option value="vegetariana">Vegetariana / vegana</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="electricidad">Horas de uso intensivo eléctrico (calefacción, A/C, lavarropas)</label>
+        <input type="number" id="electricidad" min="0" max="24" value="2" placeholder="Ej: 2">
+      </div>
+
+      <button id="btn-calcular">Calcular mi impacto →</button>
+    </section>
+
+    <section class="card hidden" id="resultados">
+      <div class="resultado-top">
+        <span class="co2-numero" id="co2-total">0</span>
+        <span class="co2-label">kg de CO₂ emitidos hoy</span>
+      </div>
+      <p class="mensaje" id="mensaje-texto"></p>
+
+      <h2>Tu bosque personal (10 árboles)</h2>
+      <p class="subtexto">Cada árbol impactado representa ~1 kg de CO₂. Un árbol maduro absorbe 22 kg al año.</p>
+      <div class="bosque-grid" id="bosque"></div>
+
+      <h2>Equivalencias de tu huella</h2>
+      <div class="equivalencias" id="equivalencias"></div>
+
+      <div class="dato-footer">
+        <strong>¿Sabías que?</strong> Chile emite en promedio 4,7 toneladas de CO₂ per cápita al año —
+        unas <strong>12,9 kg al día</strong>. Tus decisiones cotidianas sí hacen la diferencia.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 — Proyecto de Periodismo Digital. Datos basados en estimaciones promedio de emisiones de GEI.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
